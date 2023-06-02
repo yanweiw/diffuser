@@ -50,6 +50,11 @@ def get_dataset(env):
         dataset = antmaze_scale_rewards(dataset)
         get_max_delta(dataset)
 
+    if 'maze2d-large-v1' in str(env).lower():
+        ## downsizing the env
+        for k, v in dataset.items():
+            dataset[k] = v[::4]
+
     return dataset
 
 def sequence_dataset(env, preprocess_fn):

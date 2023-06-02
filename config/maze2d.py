@@ -121,11 +121,14 @@ maze2d_umaze_v1 = {
 
 maze2d_large_v1 = {
     'diffusion': {
-        'horizon': 384,
-        'n_diffusion_steps': 256,
+        'horizon': 128,
+        'n_diffusion_steps': 16,
+        'batch_size': 128,
+        'learning_rate': 5e-4,
+
     },
     'plan': {
-        'horizon': 384,
-        'n_diffusion_steps': 256,
+        'horizon': 128,
+        'n_diffusion_steps': 16,
     },
 }

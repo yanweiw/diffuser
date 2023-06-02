@@ -96,6 +96,8 @@ class Parser(Tap):
         for i in range(0, len(extras), 2):
             key = extras[i].replace('--', '')
             val = extras[i+1]
+            if 'jupyter' in val: # jupyter notebook json config does not count towards command-line arguments
+                continue
             assert hasattr(args, key), f'[ utils/setup ] {key} not found in config: {args.config}'
             old_val = getattr(args, key)
             old_type = type(old_val)

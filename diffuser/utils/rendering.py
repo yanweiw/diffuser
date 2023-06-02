@@ -298,6 +298,12 @@ class MazeRenderer:
         plt.scatter(observations[:,1], observations[:,0], c=colors, zorder=20)
         plt.axis('off')
         plt.title(title)
+        cali = [(0, 0), (9, 0), (0, 12), (9, 12), (1, 1), (8, 1), (1, 11), (8, 11)]
+        cali = np.array(cali)
+        cali = cali + 0.0
+        cali[:, 0] /= 9
+        cali[:, 1] /= 12
+        plt.scatter(cali[:, 0], cali[:, 1])
         img = plot2img(fig, remove_margins=self._remove_margins)
         return img
 
