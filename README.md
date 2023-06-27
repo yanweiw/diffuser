@@ -15,11 +15,14 @@ Load a pretrained diffusion model and sample from it in your browser with [scrip
 
 ## Installation
 
+<span style="color:red">Install mujoco first, follow https://github.com/jannerm/diffuser/issues/22#issuecomment-1354308720 </span>
+
 ```
 conda env create -f environment.yml
 conda activate diffusion
 pip install -e .
 ```
+<span style="color:red"> If run into issues, likely need to downgrade setuptools version https://github.com/openai/gym/issues/3200#issuecomment-1480854431 </span>
 
 ## Usage
 
